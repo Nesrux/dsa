@@ -2,22 +2,10 @@ package main
 
 import "fmt"
 
-func buscarMenor(arr []int) int {
-	// Stores the smallest value
-	smallest := arr[0]
-
-	// Stores the index of the smallest value
-	smallest_index := 0
-	for i := 1; i < len(arr); i++ {
-		if arr[i] < smallest {
-			smallest = arr[i]
-			smallest_index = i
-		}
-	}
-	return smallest_index
-
-}
-
+/*
+Ele funciona basicamente iterando um slice e salvando o maior elemento
+em cada ideração no segundo array, e depois retornando esse array
+*/
 func BuscarMenor(arr []int) int {
 	//Guarda o menor valor
 	menor := arr[0]
@@ -40,6 +28,7 @@ func selection_sort(arr []int) []int {
 	for i := 0; i < size; i++ {
 		menor := BuscarMenor(arr)
 		newArr[i] = arr[menor]
+		//os (...) se chamam Ellipsis
 		arr = append(arr[:menor], arr[menor+1:]...)
 	}
 	return newArr
