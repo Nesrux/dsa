@@ -9,6 +9,15 @@ func fatorial(x int64) int64 {
 		return x * fatorial(x-1)
 	}
 }
+func Fibonacci(number int) int {
+	//Essa condição valida se o número passado por parâmtero é uma das constantes
+	//definidas pela fórmula de Fibonacci. Se o valor de "number" for 0 ou 1,
+	//o mesmo valor é retornado
+	if number<= 1 {
+		return number
+	}
+	return Fibonacci(number-1) + Fibonacci(number-2)
+}
 
 func regressiva(i int) {
 	fmt.Println(i)
@@ -21,6 +30,7 @@ func regressiva(i int) {
 }
 
 func main() {
-	regressiva(10)
-	fmt.Println(fatorial(25))
+	//regressiva(10)
+	fmt.Println(Fibonacci(40))
+	//fmt.Println(fatorial(25))
 }
