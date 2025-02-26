@@ -20,3 +20,17 @@ console.log(str1);
 console.log(
   `${name} tem ${age} anos de idade e possui a pontuação de ${points}`
 );
+
+// Caracteres de escape
+
+const str4 = "Cliente \n Alice quebrou";
+const str5 = "C:\\program files \\ windows";
+const st6 = ' "Entendo " ';
+
+// Imutabilidade
+let str = "Olá, meu nome é Joao";
+let arr = str.split("");
+arr[18] = "ã";
+str = arr.join("");
+
+console.log(str);
