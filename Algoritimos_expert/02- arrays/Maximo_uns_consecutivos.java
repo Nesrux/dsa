@@ -9,14 +9,21 @@ public class Maximo_uns_consecutivos {
     }
 
     public static Integer maxNums(int[] nums) {
-        int count = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (i == 1) {
-                count++;
+        int maxOnes = 0; //Maior sequencia de 1's registrada
+        int countOnes = 0; // Sequencia de 1s atual
+        
+        for (int num : nums) {
+            if (num == 1) {
+                countOnes++;
             }
-            count = 0;
+            if (num != 1 && countOnes > 0) {
+                if (countOnes > maxOnes) {
+                    maxOnes = countOnes;
+                }
+                countOnes = 0; 
+            }
         }
 
-        return count;
+        return countOnes;
     }
 }
