@@ -49,5 +49,16 @@ public class produto_escalar_dois_vetores {
 
         return produto_escalar;
     }
+    // Versão melhorada
+    public static int produtoEscalar(List<Integer> list1, List<Integer> list2) {
+        if (list1.size() != list2.size()) return -1;
+
+        int soma = 0;
+        for (int i = 0; i < list1.size(); i++) {
+            soma += list1.get(i) * list2.get(i);
+        }
+
+        return soma;
+    }
 
 }
