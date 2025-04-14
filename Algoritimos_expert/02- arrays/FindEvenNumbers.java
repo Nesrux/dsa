@@ -17,7 +17,10 @@ public class FindEvenNumbers {
      */
 
     public static void main(String[] args) {
+        // Saida esperada = 2
         var nums_1 = new ArrayList<>(Arrays.asList(12, 345, 2, 6, 7896));
+
+        // Saida esperada = 1
         var nums_2 = new ArrayList<>(Arrays.asList(555, 901, 482, 1771));
 
         System.out.println(findEven(nums_1));
