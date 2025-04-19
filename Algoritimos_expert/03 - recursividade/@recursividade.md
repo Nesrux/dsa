@@ -71,3 +71,19 @@ fatorial n = n * (n - 1);
 
 ### Pilha de chamadas
 A pilha de chamadas é uma estrutura de dados usada pelo sistmea operacional e pelo ambiente de execução de linguaguens de programação para gerencias a execução de funções
+
+### Recursividade de cauda
+recursividade de cauda é uma técina que consiste em deixar a chamada recursiva como a ultima operação realizada antes da função retornar um resultado.
+
+Em outras palavras: `nenhum processsamento` deve ser feito na função depois da chamada recursiva.
+
+Se o compilador/interpretador da linguagem for devidamente preparado para recursiidade de cauda, a execução do programa será otimizada, sem necessidade de manter informações sobre as chamadas anteriores na pilha de chamadas.
+
+`Exemplos: Haskell, Skala`
+
+Compiladores de linguagens não "puramente" funcionais geralmente não oferecem essa otimização por padrão.
+
+#### vantagens
+Soluções alternaticas e mais otimizadas também podem ser constuídas com a recursividade de calda.
+
+Exemplo: Fibonacci exponencial vs Fibonacci linear usando função auzilidar com parametros adicionais.
