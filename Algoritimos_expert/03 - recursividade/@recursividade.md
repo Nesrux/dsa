@@ -50,3 +50,24 @@ Funções recursivas frequentemente usam mais memória devido à pilha de chamad
 
 #### inadequação à natureza do problema
 Alguns problemas são naturalmente imperativos, e para eles geralmente soluções umperativas são mais fáceis de elaborar.
+
+### Casos base e casos recursivos
+
+#### Caso base:
+é a condição que interrompe a recursão.
+é o ponto de parada para resolver diretamente o menor fragmento do problema.
+sem um caso base apropriado, a função recursiva continuará chamando a si mesma, indefinidamente, levando a um loop infinito ou um erro de Stack overflow.
+
+#### Caso recursivo.
+é a parte da função que inclui uma ou mais chamadas para a própria função, mas com argumentos que se aproximas do caso base.
+Cada chamada recursiva deve alterar os argumentos de tal forma que eles se aproximem do caso base.
+
+```javascript 
+//Caso base do fatorial onde fatorial de 0  = 1
+fatorial 0 = 1
+// Caso recursivo
+fatorial n = n * (n - 1);
+```
+
+### Pilha de chamadas
+A pilha de chamadas é uma estrutura de dados usada pelo sistmea operacional e pelo ambiente de execução de linguaguens de programação para gerencias a execução de funções
