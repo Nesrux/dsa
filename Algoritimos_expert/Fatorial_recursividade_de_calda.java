@@ -2,7 +2,7 @@
  * Ideia da solução com recursividade de cauuda:
  * intermediário como um parâmentro adicional da função.
  */
-public class Fatorial_recursividade_de_cauda {
+public class Fatorial_recursividade_de_calda {
 
     public static int fatorial(int i) {
         return fatorialTailRecursive(i, 1);
