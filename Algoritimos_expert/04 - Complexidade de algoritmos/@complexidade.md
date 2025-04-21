@@ -24,3 +24,19 @@ O algoritimo análisado pode ser encontrado clicando [Aqui](./busca_sequencial.j
 #### Análise da complexidade de espaço
 Independendo do caso, esse algoritimo  utiliza apenas uma variavel auxiliar (i) e esse uso de memória não se altera em função do tamanho  da entrada
 `f(n) = 1 (Função constante)`
+
+#### Análise da complexidade de espaço
+O Tempo de execução do algoritimo crescre conforme o tamanho da entrada de dados.
+`F(n) = n (Função linear)`
+
+### Notação assintótica
+Foca no comportamento de longo prazo de um algoritimo, ignorando constantes e termos de menor ordem que têm pouca influencia em entradas grandes.
+
+```
+n/2 -> n
+4n -> n
+3n² + 2n + 7 -> n²
+```
+A notação assintótica permite uma comparação mais limpa e mais significativa entre algoritimos.
+
+Ele foca no termo dominante que mais influencia o crescimento quando `n` se torna muito grande.
