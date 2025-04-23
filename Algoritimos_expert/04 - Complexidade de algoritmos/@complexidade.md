@@ -1,61 +1,58 @@
-## Complexidade de algoritimos
+## Complexidade de Algoritmos
 
-é uma medida que descreve a quantidade de recursos computacionais que um algoritimo necessita para executar, em relação ao tamanho da entrada do algoritimo.
+A complexidade de algoritmos mede os **recursos computacionais** (tempo e memória) que um algoritmo precisa para funcionar, em relação ao **tamanho da entrada**.
 
-Esses recursos podem incluir :
+---
 
-- tempo de execução
-- espaço de memória
+### Tipos de Complexidade
 
-### Complexidade de tempo
+#### Complexidade de Tempo
+- Mede o **número de passos** necessários para a execução.
+- Cresce com o aumento da entrada.
 
-refere-se ao `número de passos` que um algoritimo leva para complementar sua execução em função do `tamanho de entrada`
+#### Complexidade de Espaço
+- Mede a **quantidade de memória** utilizada.
+- Também varia conforme o tamanho da entrada.
 
-Em outras palavras :
-Quanto cresce o número de passos à medida que cresce o tamanho da entrada.
+---
 
-### complexidade de espaço
+### Exemplo: Análise de Complexidade da Busca Sequencial
+> Código analisado: [`busca_sequencial.java`](./busca_sequencial.java)
 
-Refere-se à `quantidade de memória` que o algoritimo necessita para o seu processamento, em função do `tamanho da entrada`.
+#### Espaço
+- Usa apenas uma variável auxiliar (`i`).
+- Independente do tamanho da entrada.
+- **Complexidade:** `O(1)` (Constante)
 
-Em outras palavras:
-Quando cresce a quantidade de memória utilizada à medida que cresce o tamnho da entrada.
+#### Tempo
+- Executa uma verificação para cada elemento da entrada.
+- **Complexidade:** `O(n)` (Linear)
 
-### Análise de BIG O de uma busca sequencial
+---
 
-O algoritimo análisado pode ser encontrado clicando [Aqui](./busca_sequencial.java).
+### Notação Assintótica (Big-O)
 
-#### Análise da complexidade de espaço
+Foca no **comportamento do algoritmo para entradas muito grandes**, ignorando constantes e termos menores:
 
-Independendo do caso, esse algoritimo utiliza apenas uma variavel auxiliar (i) e esse uso de memória não se altera em função do tamanho da entrada
-`f(n) = 1 (Função constante)`
-
-#### Análise da complexidade de espaço
-
-O Tempo de execução do algoritimo crescre conforme o tamanho da entrada de dados.
-`F(n) = n (Função linear)`
-
-### Notação assintótica
-
-Foca no comportamento de longo prazo de um algoritimo, ignorando constantes e termos de menor ordem que têm pouca influencia em entradas grandes.
-
-```
-n/2 -> n
-4n -> n
-3n² + 2n + 7 -> n²
+```txt
+n/2       → O(n)
+4n        → O(n)
+3n²+2n+7  → O(n²)
 ```
 
-A notação assintótica permite uma comparação mais limpa e mais significativa entre algoritimos.
+- Compara algoritmos de forma mais significativa.
+- Considera apenas o **termo dominante**.
 
-Ele foca no termo dominante que mais influencia o crescimento quando `n` se torna muito grande.
+---
 
-### Complexidades mais comuns
+### Tabela de Complexidades Comuns
 
-| Big O           | Tipo de ordem             | Tratavél              |
-| --------------- | ------------------------- | --------------------- |
-| O(1)            | Ordem Constante           | Algoritimo tratavel   |
-| O(LOG N)        | Orden Logaritimica        | Algoritimo tratavel   |
-| O(N)            | Orderm Linear             | Algoritimo tratavel   |
-| O(N Log n)      | Ordem Logaritimica linear | Algoritimo tratavel   |
-| O(N²), O(N³)... | Ordem Polinomial          | Algoritimo tratavel   |
-| O(2^n)          | Ordem Exponencial         | Algoritimo intratavél |
+| Notação Big-O     | Tipo                     | Tratável?            |
+|-------------------|--------------------------|----------------------|
+| `O(1)`            | Constante                | Sim                  |
+| `O(log n)`        | Logarítmica              | Sim                  |
+| `O(n)`            | Linear                   | Sim                  |
+| `O(n log n)`      | Log-linear               | Sim                  |
+| `O(n²), O(n³)`    | Polinomial               | Sim                  |
+| `O(2^n)`          | Exponencial              | Não (intratável)     |
+
