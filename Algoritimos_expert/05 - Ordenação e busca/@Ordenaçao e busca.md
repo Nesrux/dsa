@@ -56,7 +56,7 @@ Considerando um array com N elementos.
  * Caso médio : O (n/2)
 
  ### Busca binária
- Uma estratégia mais sofisticada de busca é a busca binparia, sendo esta a forma mais eficiente de buscar um elemento em um array
+ Uma estratégia mais sofisticada de busca é a busca binária, sendo esta a forma mais eficiente de buscar um elemento em um array
 
  para aplicar o algoritimo de busca binária, vamos assumor que os dados estão todos **ordenados**
 
@@ -64,6 +64,28 @@ Considerando um array com N elementos.
 
 O algoritimo funciona da seguinte forma, a cada passo obtemos o elemento centtrario do array.
 * Se o valor deste elemento for igual ao elemento que estamos buscando a busca termina.
-*se o elemento do meio for maior que o elmento que estamos buscando, então reduzimos a busca a metade inferior do array.
-*caso contrario reduzimos a busca à metade superior do array.
+* se o elemento do meio for maior que o elmento que estamos buscando, então reduzimos a busca a metade inferior do array.
+* Caso contrario reduzimos a busca à metade superior do array.
+
+#### Exemplo:
+```
+Passo 1: [2, 5, (8), 12, 16, 23] → 23 > 8 → direita
+Passo 2: [12, (16), 23] → 23 > 16 → direita
+Passo 3: [23] → 23 == 23 → encontrado
+```
+
+
+
+O exemplo do algoritimo esta[`Aqui`](./BuscaBinaria.java)
+
+#### Complexidade
+Considerando o algoritimo de busca binária, sua complexidade em termos de Big O é
+* **Melhor caso** O(1), onde o elemento buscado está exatamente no meio do array.
+
+* **Pior caso** O(Log n), onde o elemento não existe
+
+* **Caso médio** O(log n)
+
+
+
 
