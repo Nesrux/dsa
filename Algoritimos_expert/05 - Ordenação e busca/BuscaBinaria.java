@@ -5,6 +5,7 @@ public class BuscaBinaria {
 
         System.out.println(busca_binaria(numeros, num));
     }
+    
 
     public static int busca_binaria(int[] arr, int num) {
         int inicio = 0;
