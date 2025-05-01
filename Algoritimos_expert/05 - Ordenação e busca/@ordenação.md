@@ -62,4 +62,8 @@ Considerando um array com N elementos, temos
 
 ---
 
-
+## Selection Sort
+Também conhecido como Algoritimo de **Ordenação por seleção**, é um dos algoritimos mais utilizados na computação em geral, o Selection sort é mais eficiente quando comparado com o bublle sort, no entanto, seu desempenho reduz significativamente a medida que o número do elemenro no array aumenta, também é um dos algoritimos de ordenação mais simples, e funciona da seguinte forma
+* Procura o menor elemento do array e seleciona-o. em seguida, troca de posição com a primeira possição do array, ou seja, o elemento é colocado na posição correta.
+* em seguida, procura o próximo valor, seleciona-o e troca colocando este elemento na segunda posição.
+*este processo é repetido até que todo o array esteja ordenado.
