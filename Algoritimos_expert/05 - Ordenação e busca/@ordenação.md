@@ -54,6 +54,12 @@ Basicamente tem dois passos, dado um conjunto, seja um lista ou seja um array ou
 
 Em resumo o Algoritimo é bem simples, só precisa de uma variavel auxiliar, e um for dentro de outro, a demostração do algoritimo feito em java pode ser encontrado [aqui](./BubbleSort.java)
 
+### Complexidade
+Considerando um array com N elementos, temos
+* **Melhor caso**: O(n), os elementos já estão ordenados
+* **Pior caso**: O(n²), os elemestos ordenaos da ordem inversa
+* **Caso médio**: O(N²)
+
 ---
 
 

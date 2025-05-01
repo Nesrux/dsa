@@ -8,21 +8,34 @@ public class BubbleSort {
 
     public static int[] sort(int[] nums) {
         int size = nums.length; // tamanho do array
-
         for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size -1; j++) {
-                if (nums[j] > nums[j+1]) {
-                    int temp1 = nums[j];
-                    int temp2 = nums[j+1];
-
-                    nums[j] = temp2;
-                    nums[j+1] = temp1;
+            for (int j = 0; j < size - 1; j++) {
+                if (nums[j] > nums[j + 1]) {
+                    int temp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
                 }
-                
             }
         }
+        return nums;
+    }
 
-
+    public static int[] bubble_sort_melhorado(int[] nums) {
+        int size = nums.length; // tamanho do array
+        for (int i = 0; i < size; i++) {
+            boolean swapped = false;
+            for (int j = 0; j < size - 1 - i; j++) {
+                if (nums[j] > nums[j + 1]) {
+                    int temp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            }
+        }
         return nums;
     }
 }
