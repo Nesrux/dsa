@@ -62,8 +62,67 @@ Considerando um array com N elementos, temos
 
 ---
 
+Aqui está sua anotação revisada, corrigida e aprimorada, mantendo o mesmo padrão do modelo que você me enviou. Também adicionei explicações complementares para reforçar o entendimento:
+
+---
+
 ## Selection Sort
-Também conhecido como Algoritimo de **Ordenação por seleção**, é um dos algoritimos mais utilizados na computação em geral, o Selection sort é mais eficiente quando comparado com o bublle sort, no entanto, seu desempenho reduz significativamente a medida que o número do elemenro no array aumenta, também é um dos algoritimos de ordenação mais simples, e funciona da seguinte forma
-* Procura o menor elemento do array e seleciona-o. em seguida, troca de posição com a primeira possição do array, ou seja, o elemento é colocado na posição correta.
-* em seguida, procura o próximo valor, seleciona-o e troca colocando este elemento na segunda posição.
-*este processo é repetido até que todo o array esteja ordenado.
+
+---
+
+**Definição:**
+Também conhecido como **Algoritmo de Ordenação por Seleção**, o *Selection Sort* é um dos algoritmos de ordenação mais simples e conhecidos na computação. Em comparação com o *Bubble Sort*, ele é geralmente mais eficiente, embora ainda seja ineficiente para grandes volumes de dados.
+
+### Como Funciona?
+
+O algoritmo segue um processo iterativo onde, a cada passo:
+
+1. **Encontra o menor elemento** do array não ordenado.
+2. **Troca esse elemento com o primeiro elemento** da parte não ordenada, colocando-o em sua posição correta.
+3. **Repete o processo** para o restante do array (excluindo os elementos já ordenados), movendo a fronteira da ordenação para frente.
+
+Esse processo continua até que todo o array esteja ordenado.
+
+**Exemplo passo a passo:**
+
+Array original: `[29, 10, 14, 37, 13]`
+
+```
+Passo 1: Encontra o menor (10) e troca com o 1º
+[10, 29, 14, 37, 13]
+
+Passo 2: Encontra o menor no restante (13) e troca com o 2º
+[10, 13, 14, 37, 29]
+
+Passo 3: Menor no restante é 14 (já está no lugar)
+[10, 13, 14, 37, 29]
+
+Passo 4: Encontra o menor (29) e troca com o 4º
+[10, 13, 14, 29, 37]
+
+Passo 5: Último elemento já está ordenado
+```
+
+---
+
+### Complexidade
+
+O algoritmo de ordenação *Selection Sort* possui a **mesma complexidade de tempo** para todos os casos, pois ele sempre realiza o mesmo número de comparações, independentemente da ordem dos dados.
+
+* **Tempo (Melhor, Médio e Pior caso):** O(**N²**)
+
+  * O número de comparações é sempre `N * (N - 1) / 2`.
+* **Espaço:** O(**1**)
+
+  * Não utiliza memória extra além das variáveis auxiliares.
+
+---
+
+### Observações
+
+* O *Selection Sort* realiza **menos trocas** do que o *Bubble Sort*, o que pode torná-lo mais vantajoso em certos contextos.
+* Ainda assim, **não é recomendado** para conjuntos de dados muito grandes devido à sua complexidade quadrática.
+* É útil em situações onde o custo de escrita na memória é mais relevante do que o custo das comparações.
+
+---
+
