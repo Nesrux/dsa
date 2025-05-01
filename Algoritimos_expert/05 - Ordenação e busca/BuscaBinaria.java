@@ -3,7 +3,7 @@ public class BuscaBinaria {
         int[] numeros = {1, 3, 5, 7, 9, 11, 13, 15};
         int num = 9;
 
-        System.out.println(busca_binaria(numeros, num));
+        System.out.println(busca_binaria(numeros, num)); // saida 4
     }
     
 

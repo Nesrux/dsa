@@ -20,7 +20,7 @@ public class BuscaBinariaRecursiva {
         int[] nums = {1, 3, 5, 7, 9, 11, 13, 15};
         int key = 9;
 
-        System.out.println(busca_binaria_recursiva(nums, key, 0, nums.length -1));
+        System.out.println(busca_binaria_recursiva(nums, key, 0, nums.length -1)); // saida 4
         
     }
 }
