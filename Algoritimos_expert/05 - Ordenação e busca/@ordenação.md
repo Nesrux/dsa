@@ -126,20 +126,112 @@ O algoritmo de ordenação *Selection Sort* possui a **mesma complexidade de tem
 
 ---
 
-## Insertion sort
-Também conhecido como algoritimo de ordenação por inserção. esté é um dos algoritimos mais eficientes de ordenação, considerando pequenos conjuntos de dados, consegue ser até mais eficiente que o algoritimo Marge sort e Quick Sort.
+Aqui está sua anotação revisada e aprimorada para os tópicos **Insertion Sort** e **Merge Sort**, seguindo o mesmo padrão limpo e explicativo anterior. Fiz correções gramaticais, clareza de ideias e acrescentei observações úteis para estudo.
 
-### Funcionamento do algoritimo
-O algoritimo funciona da segunte forta
+---
 
-1) para cada posição _k_ do array verifica-se o seu valor está na posição correta.
+## Insertion Sort
 
-2) verifica-se os elementos à esquerda da posisção _k_ e movimenta-se uma posição para frente os elementos que são **maiores** que o valor da posição _k_
+---
 
-3) Desta forma, será aberta uma posição livre para inserção do elemento da posição_k_ na posição correta.
+**Definição:**
+Também conhecido como **Algoritmo de Ordenação por Inserção**, o *Insertion Sort* é eficiente para **conjuntos pequenos de dados**. Em muitos casos, chega a ser mais rápido que algoritmos mais sofisticados como **Merge Sort** e **Quick Sort**, especialmente quando o array está quase ordenado.
 
-4) este processo é repitido para as posições sequintes, até que o array esteja ordenado.
+---
 
-o Exemplo do algoritimo feito em java esta [aqui](./InsertionSort.java)
+### Funcionamento do Algoritmo
 
+O algoritmo funciona de forma semelhante à maneira como organizamos cartas de baralho na mão:
 
+1. Para cada posição `k` no array (a partir da segunda posição), verifica-se se o elemento está na posição correta.
+2. Compara-se o valor de `array[k]` com os elementos **à esquerda** dele.
+3. Todos os elementos **maiores** que `array[k]` são deslocados **uma posição para a direita**.
+4. Abre-se assim uma posição onde o `array[k]` pode ser **inserido** corretamente.
+5. Esse processo se repete até que o array esteja ordenado.
+
+**Exemplo (parcial):**
+
+```plaintext
+Array inicial: [8, 3, 5, 1]
+
+Passo 1: Compara 3 com 8 → move 8 → insere 3
+[3, 8, 5, 1]
+
+Passo 2: Compara 5 com 8 → move 8; compara com 3 → insere 5
+[3, 5, 8, 1]
+
+Passo 3: Compara 1 com 8, 5, 3 → move todos → insere 1
+[1, 3, 5, 8]
+```
+
+---
+
+### Complexidade
+
+* **Melhor caso:** O(**n**) (array já ordenado)
+* **Pior caso:** O(**n²**) (array em ordem inversa)
+* **Caso médio:** O(**n²**)
+* **Espaço:** O(**1**) – algoritmo in-place (não usa memória adicional significativa)
+
+---
+
+### Observações
+
+* Muito eficiente para **arrays quase ordenados**.
+* É **estável** (não altera a ordem relativa de elementos iguais).
+* Poucas trocas comparado com Bubble Sort.
+
+📄 Exemplo em Java: [InsertionSort.java](./InsertionSort.java)
+
+---
+
+## Merge Sort
+
+---
+
+**Definição:**
+Também chamado de **Ordenação por Junção/Intercalação**, o *Merge Sort* é um algoritmo **recursivo** baseado na técnica **divide e conquista**. A ideia é dividir o problema em partes menores, resolver essas partes e então combinar (mesclar) as soluções.
+
+---
+
+### Funcionamento do Algoritmo
+
+O processo é:
+
+1. **Divide** recursivamente o array em duas partes.
+2. Continua dividindo até que cada subarray contenha apenas **um elemento**.
+3. **Mescla (merge)** os subarrays de forma ordenada.
+4. Repete o processo até reconstruir um único array ordenado.
+
+**Exemplo de execução:**
+
+```plaintext
+Array inicial: [8, 3, 5, 1]
+
+Divide: [8, 3] e [5, 1]
+Divide: [8], [3], [5], [1]
+Combina: [3, 8], [1, 5]
+Combina: [1, 3, 5, 8]
+```
+
+---
+
+### Complexidade
+
+* **Melhor caso:** O(**n log n**)
+* **Pior caso:** O(**n log n**)
+* **Caso médio:** O(**n log n**)
+* **Espaço:** O(**n**) – requer memória auxiliar para armazenar as subdivisões
+
+---
+
+### Observações
+
+* Muito eficiente mesmo com grandes volumes de dados.
+* **Estável**
+* Utilizado em bibliotecas de ordenação padrão de várias linguagens (como Python e Java).
+* Sua maior desvantagem é a necessidade de **memória extra**.
+
+📄 Exemplo em Java: [MergeSort.java](./MergeSort.java)
+
+---
