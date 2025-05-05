@@ -126,3 +126,19 @@ O algoritmo de ordenação *Selection Sort* possui a **mesma complexidade de tem
 
 ---
 
+## Insertion sort
+Também conhecido como algoritimo de ordenação por inserção. esté é um dos algoritimos mais eficientes de ordenação, considerando pequenos conjuntos de dados, consegue ser até mais eficiente que o algoritimo Marge sort e Quick Sort.
+
+### Funcionamento do algoritimo
+O algoritimo funciona da segunte forta
+
+1) para cada posição _k_ do array verifica-se o seu valor está na posição correta.
+
+2) verifica-se os elementos à esquerda da posisção _k_ e movimenta-se uma posição para frente os elementos que são **maiores** que o valor da posição _k_
+
+3) Desta forma, será aberta uma posição livre para inserção do elemento da posição_k_ na posição correta.
+
+4) este processo é repitido para as posições sequintes, até que o array esteja ordenado.
+
+
+
