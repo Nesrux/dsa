@@ -140,5 +140,6 @@ O algoritimo funciona da segunte forta
 
 4) este processo é repitido para as posições sequintes, até que o array esteja ordenado.
 
+o Exemplo do algoritimo feito em java esta [aqui](./InsertionSort.java)
 
 
