@@ -234,4 +234,79 @@ Combina: [1, 3, 5, 8]
 
 📄 Exemplo em Java: [MergeSort.java](./MergeSort.java)
 
+
 ---
+
+## Quick Sort
+
+---
+
+**Definição:**
+Também conhecido como **Ordenação por Partição**, o *Quick Sort* é um algoritmo **recursivo** e eficiente que segue a estratégia de **dividir para conquistar**. É amplamente utilizado devido ao seu bom desempenho prático, mesmo em grandes conjuntos de dados.
+
+---
+
+### Funcionamento do Algoritmo
+
+A ideia central do *Quick Sort* é escolher um **pivô** e, a partir dele, reorganizar os elementos do array da seguinte forma:
+
+* Todos os valores **menores que o pivô** ficam à **esquerda**.
+* Todos os valores **maiores que o pivô** ficam à **direita**.
+
+Após essa partição, o mesmo processo é aplicado recursivamente em cada uma das partes (subarrays), até que todo o array esteja ordenado.
+
+---
+
+### Passo a Passo
+
+1. Escolhe-se um **pivô** (pode ser o primeiro, o último, o central ou um valor aleatório).
+2. Reorganiza-se o array:
+
+   * Elementos **menores** que o pivô vão para a **esquerda**.
+   * Elementos **maiores** vão para a **direita**.
+3. O pivô estará agora em sua **posição correta**.
+4. Aplica-se recursivamente o *Quick Sort* nas **duas partições** (esquerda e direita do pivô).
+5. Quando cada subarray tiver tamanho 1 ou 0, a ordenação estará completa.
+
+---
+
+**Exemplo simples:**
+
+```plaintext
+Array original: [8, 3, 5, 1]
+
+1. Escolhe pivô = 5
+2. Particiona: [3, 1] < 5 < [8]
+3. Recursivamente:
+   - [3, 1] → pivô = 1 → [1, 3]
+   - [8] já está ordenado
+Resultado final: [1, 3, 5, 8]
+```
+
+---
+
+### Complexidade
+
+* **Melhor caso:** O(**n log n**) (quando o pivô divide o array de forma equilibrada)
+* **Pior caso:** O(**n²**) (quando o pivô é o maior ou menor elemento constantemente, ex: array já ordenado)
+* **Caso médio:** O(**n log n**)
+* **Espaço:** O(**log n**) em média (devido à pilha de chamadas recursivas)
+
+---
+
+### Observações
+
+* Muito eficiente e usado na prática, inclusive em **implementações padrão** de ordenação (como `Arrays.sort()` no Java para tipos primitivos).
+* **Não é estável** (a ordem relativa entre elementos iguais pode ser alterada).
+* É **in-place** (não precisa de muita memória extra além da pilha recursiva).
+* O desempenho pode ser otimizado com estratégias de escolha de pivô, como:
+
+  * **Pivô aleatório**
+  * **Mediana de três elementos**
+  * **Híbridos com Insertion Sort para arrays pequenos**
+
+📄 Exemplo em Java: [QuickSort.java](./QuickSort.java)
+
+---
+
+Se quiser, posso incluir uma ilustração visual em ASCII da partição e das chamadas recursivas. Deseja isso?
