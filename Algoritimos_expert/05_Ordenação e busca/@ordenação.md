@@ -308,5 +308,3 @@ Resultado final: [1, 3, 5, 8]
 📄 Exemplo em Java: [QuickSort.java](./QuickSort.java)
 
 ---
-
-Se quiser, posso incluir uma ilustração visual em ASCII da partição e das chamadas recursivas. Deseja isso?
