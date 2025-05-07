@@ -1,4 +1,3 @@
-Aqui está sua anotação sobre **Listas Encadeadas**, revisada com correções gramaticais, melhorias de clareza e organização, e também com explicações complementares para reforçar o entendimento:
 
 ---
 
