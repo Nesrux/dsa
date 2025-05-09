@@ -13,7 +13,7 @@ public class Main {
         list.addAtEnd(31);
         list.print();
 
-        list.addAtInit(3);
+        list.addAtPosition(0, 11);
         list.print();
 
     }

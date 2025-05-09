@@ -40,10 +40,26 @@ public class LinkedList<T> {
         this.size = this.size + 1;
     }
 
-    public void addAtInit(T elem) {
+    public void addAtPosition(int index, T Elem) {
+        if (index == 0) {
+            addAtStart(Elem);
+            return;
+        }
+        if (index > this.size || index < 0) {
+            addAtEnd(Elem);
+            return;
+        }
+        Node<T> node = new Node<>(Elem);
+        var aux = this.getNode(index - 1);
+        node.setNext(aux.getNext());
+        aux.setNext(node);
+        this.size++;
+    }
+
+    public void addAtStart(T elem) {
         Node<T> node = new Node<>(elem);
         var temp = getHead();
-        
+
         this.head = node;
         head.setNext(temp);
     }
@@ -51,6 +67,29 @@ public class LinkedList<T> {
     public void clear() {
         this.head = null;
         this.size = 0;
+    }
+
+    public T get(int index) {
+        var current = this.getNode(index);
+        if (current != null)
+            return current.getValue();
+        return null;
+    }
+
+    public Node<T> getNode(int index) {
+        if (index < 0 || index > getSize())
+            return null;
+        var current = this.head;
+        int i = 0;
+        while (i != index) {
+            current = current.getNext();
+            i++;
+        }
+        if (current != null) {
+            return current;
+        }
+
+        return null;
     }
 
     public void print() {
