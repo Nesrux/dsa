@@ -92,6 +92,28 @@ public class LinkedList<T> {
         return null;
     }
 
+    public int indexOf(T elem) {
+        int index = 0;
+        var current = this.head;
+
+        while (current != null) {
+            if (current.getValue() == elem) {
+                return index;
+            }
+            current = current.getNext();
+            index++;
+        }
+        return -1;
+    }
+
+    public boolean contains(T elem) {
+        var indexElemen = indexOf(elem);
+        if (indexElemen == -1) {
+            return false;
+        }
+        return true;
+    }
+
     public void print() {
         var current = getHead();
         List<T> list = new ArrayList<>();

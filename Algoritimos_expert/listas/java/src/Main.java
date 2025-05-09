@@ -13,8 +13,7 @@ public class Main {
         list.addAtEnd(31);
         list.print();
 
-        list.addAtPosition(0, 11);
-        list.print();
+        System.out.println(list.contains(4));
 
     }
 
