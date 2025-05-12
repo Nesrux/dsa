@@ -1,7 +1,5 @@
 package listas.java.src;
 
-import java.util.Objects;
-
 public class Task {
     private Integer id;
     private String description;
@@ -46,8 +44,6 @@ public class Task {
     public void setStatus(TaskStatus status) {
         this.status = status;
     }
-
-
 
     @Override
     public String toString() {
