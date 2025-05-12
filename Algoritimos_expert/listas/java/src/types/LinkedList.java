@@ -1,4 +1,4 @@
-package listas.java.src;
+package listas.java.src.types;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,11 +64,6 @@ public class LinkedList<T> {
         head.setNext(temp);
     }
 
-    public void clear() {
-        this.head = null;
-        this.size = 0;
-    }
-
     public T get(int index) {
         var current = this.getNode(index);
         if (current != null)
@@ -106,6 +101,40 @@ public class LinkedList<T> {
         return -1;
     }
 
+    public void deleteByIndex(int index) {
+        if (this.isEmpty() || get(index) == null) {
+            return;
+        }
+
+        Node<T> current;
+        if (index == 0) {
+            current = getNode(1);
+            this.head = current;
+            this.size--;
+            return;
+        }
+        if (index == this.size - 1) {
+            current = getNode(this.size - 2);
+            current.setNext(null);
+            this.size--;
+            return;
+        }
+
+        current = getNode(index - 1);
+        this.size--;
+        current.setNext(getNode(index + 1));
+
+    }
+
+    public boolean deleteByElem(T elem) {
+        int index = indexOf(elem);
+        if (index != -1) {
+            deleteByIndex(index);
+            return true;
+        }
+        return false;
+    }
+
     public boolean contains(T elem) {
         var indexElemen = indexOf(elem);
         if (indexElemen == -1) {
@@ -124,5 +153,10 @@ public class LinkedList<T> {
         }
         System.out.println(list);
 
+    }
+
+    public void clear() {
+        this.head = null;
+        this.size = 0;
     }
 }

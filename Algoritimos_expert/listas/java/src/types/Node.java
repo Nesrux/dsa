@@ -1,4 +1,4 @@
-package listas.java.src;
+package listas.java.src.types;
 
 public class Node<T> {
 
