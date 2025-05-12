@@ -3,22 +3,23 @@ package listas.java.src;
 import java.util.Objects;
 
 public class Task {
-    private int id;
+    private Integer id;
     private String description;
     private String tag;
     private TaskStatus status;
 
-    public Task(
-            final int id,
-            final String description,
-            final String tag) {
+    public Task(Integer id, String description, String tag, TaskStatus status) {
         this.id = id;
         this.description = description;
         this.tag = tag;
-        this.status = TaskStatus.PENDING;
+        this.status = status;
     }
 
-    public int getId() {
+    public Task(Integer id, String description, String tag) {
+        this(id, description, tag, TaskStatus.PENDING);
+    }
+
+    public Integer getId() {
         return id;
     }
 
@@ -26,45 +27,27 @@ public class Task {
         return description;
     }
 
-    public TaskStatus getStatus() {
-        return status;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getTag() {
         return tag;
     }
 
-    public void setDescription(final String description) {
-        this.description = description;
-    }
-
-    public void setId(final int id) {
-        this.id = id;
-    }
-
-    public void setStatus(final TaskStatus status) {
-        this.status = status;
-    }
-
-    public void setTag(final String tag) {
+    public void setTag(String tag) {
         this.tag = tag;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Task)) {
-            return false;
-        }
-        Task task = (Task) o;
-        return id == task.id;
+    public TaskStatus getStatus() {
+        return status;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
+    public void setStatus(TaskStatus status) {
+        this.status = status;
     }
+
+
 
     @Override
     public String toString() {
