@@ -1,4 +1,4 @@
-package listas.java.src;
+package Listas.java.src;
 
 public class Task {
     private Integer id;

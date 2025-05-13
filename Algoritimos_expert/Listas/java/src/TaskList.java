@@ -1,10 +1,10 @@
-package listas.java.src;
+package Listas.java.src;
 
 import java.util.Arrays;
 
-import listas.java.src.Task.TaskStatus;
-import listas.java.src.types.LinkedList;
-import listas.java.src.types.Node;
+import Listas.java.src.Task.TaskStatus;
+import Listas.java.src.types.LinkedList;
+import Listas.java.src.types.Node;
 
 public class TaskList {
 

@@ -1,5 +1,4 @@
-package listas.java.src;
-
+package Listas.java.src;
 public class Main {
     public static void main(String[] args) {
 
