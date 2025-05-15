@@ -8,17 +8,18 @@ import java.util.Stack;
  * ou seja, cada parênteses aberto "(" tem um
  * correspondente fechado ")" e vice-versa
  */
-public class IsBalance {
+public class Desafio_isBalance {
     public static void main(String[] args) {
         var a1 = isBalance("()()()"); // true
         var a2 = isBalance("public static void main (String[] args)()"); // true
         var a3 = isBalance("(()))("); // false
         var a4 = isBalance("(())()");
 
-        System.out.println(a1);
-        System.out.println(a2);
-        System.out.println(a3);
-        System.out.println(a4);
+        System.out.println(a1); // true
+        System.out.println(a2); // true
+        System.out.println(a3); // false
+        System.out.println(a4); // true
+        System.out.println(isBalance("()()")); // true
     }
 
     public static boolean isBalance(String word) {
@@ -29,7 +30,10 @@ public class IsBalance {
             if (arr[i] == '(') {
                 stack.push(arr[i]);
             }
-            if (arr[i] == ')' && !stack.isEmpty()) {
+            if (arr[i] == ')') {
+                if (stack.isEmpty()) {
+                    return false;
+                }
                 stack.pop();
             }
         }
