@@ -1,6 +1,7 @@
 package pilhas_filas;
 
-/*Classe de uma pilha de dados feitos com array */
+/*Classe de uma pilha de dados feitos com array, para ficar mais simples,
+ a stack com a implementação utilizando "ponteiros", vai ser chamado de pilha (pt-bt) */
 public class Stack<T> {
     private final Integer size;
     private T[] arr;
