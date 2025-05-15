@@ -1,26 +1,63 @@
-# Visão geral
+# Visão Geral
 
-Pilhas e filas são estruturas de dados linerares, com regras especificas de inserção e remoção de elementos. Estas estruturas podem ser mais apropriasdas para resolução de problemas especificos.
+**Pilhas** e **Filas** são **estruturas de dados lineares** com regras específicas de **inserção** e **remoção** de elementos. São fundamentais em diversos contextos da ciência da computação e mais adequadas para a **resolução de problemas específicos**, como algoritmos de navegação, análise sintática, controle de fluxo, entre outros.
 
-## Estruturas lineares
+---
 
-Estruturas lineares são Estruturas de dados sequanciais e ordenadas, algumas delas são arrays, listas pilhas, filas, elas são estruturas que existem o conceito de quem está antes e quem está depois de certo elemento.
+## Estruturas Lineares
 
-## Estruturas de dados não lineares
+São estruturas **sequenciais e ordenadas**, ou seja, existe uma **posição definida** para cada elemento, com a noção clara de “antes” e “depois”.
 
-Estruturas de dados não lineares são estruturas que não formam uma "linha", elas podem ser estruturas hierarquicas, podem ser estruturas de grafos, estruturas de hash, algumas delas são, Conjuntos, dicionários, arvores
+### Exemplos:
 
-## Problema Exemplo : is-balanced
+* **Array**
+* **Lista**
+* **Pilha**
+* **Fila**
 
-Fazer uma função para verificar se os parênteses em uma string estão corretamente balanceados, ou seka, cada parêntese aberto "(" tem uma correspondente fechado ")" e vice-versa.
+Essas estruturas permitem percorrer os elementos em uma ordem previsível (linear), sendo úteis em algoritmos que exigem acesso sequencial.
 
-Exemplo 1
+---
 
-| Entrada | Saida |
+## Estruturas de Dados Não Lineares
+
+Ao contrário das estruturas lineares, as **estruturas não lineares** não organizam seus dados em uma sequência única. Elas podem representar relações mais complexas, como **hierarquias**, **conjuntos**, ou **ligações múltiplas** entre elementos.
+
+### Exemplos:
+
+* **Conjuntos**
+* **Dicionários (Mapas)**
+* **Árvores**
+* **Grafos**
+* **Tabelas Hash (Hash Tables)**
+
+Essas estruturas são mais adequadas para modelar relações como **genealogias, redes de computadores, ou mapas de navegação**.
+
+---
+
+## Problema Exemplo: `isBalanced`
+
+Crie uma função que verifica se os **parênteses** em uma string estão **corretamente balanceados**. Em outras palavras, cada parêntese de abertura `(` deve ter um correspondente de fechamento `)`, e a ordem deve ser respeitada.
+
+---
+
+### Regras:
+
+* Para cada `(` deve haver um `)` correspondente.
+* O fechamento deve seguir a ordem correta (não pode fechar antes de abrir).
+
+---
+
+### Exemplo 1:
+
+| Entrada  | Saída |
+| -------- | ----- |
+| `(())()` | True  |
+
+### Exemplo 2:
+
+| Entrada | Saída |
 | ------- | ----- |
-| (())()  | True  |
+| `())(`  | False |
 
-Exemplo 2
-| Entrada | Saida |
-| ------- | ----- |
-| ())( | False |
+---
