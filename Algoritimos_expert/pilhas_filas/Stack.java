@@ -2,12 +2,12 @@ package pilhas_filas;
 
 /*Classe de uma pilha de dados feitos com array, para ficar mais simples,
  a stack com a implementação utilizando "ponteiros", vai ser chamado de pilha (pt-bt) */
+@SuppressWarnings("unchecked")
 public class Stack<T> {
     private final Integer size;
     private T[] arr;
     private int top;
 
-    @SuppressWarnings("unchecked")
     public Stack(Integer size) {
         this.size = size;
         this.top = -1;
@@ -49,6 +49,11 @@ public class Stack<T> {
 
     public T peek() {
         return arr[this.top];
+    }
+
+    public void clear() {
+        this.arr = (T[]) new Object[size];
+        this.top = -1;
     }
 
 }

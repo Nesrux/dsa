@@ -6,7 +6,7 @@ public class Pilha<T> {
     private LinkedList<T> list;
 
     public Pilha() {
-     
+
         list = new LinkedList<>();
     }
 
@@ -26,12 +26,16 @@ public class Pilha<T> {
         return this.list.size() == 0;
     }
 
-    public T peek(){
+    public T peek() {
         return this.list.getLast();
     }
 
-    public int count(){
+    public int count() {
         return this.list.size();
+    }
+
+    public void clear() {
+        this.list.clear();
     }
 
 }
