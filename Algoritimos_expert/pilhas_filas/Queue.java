@@ -13,11 +13,11 @@ public class Queue<T> {
     public void add(T elem){
         this.list.add(elem);
     }
-    public void remove(T elem){
+    public T remove(){
         if(isEmpty()){
             throw new IllegalStateException("queue is empty");
         }
-        list.remove(0);
+       return list.remove(0);
 
     }
 
