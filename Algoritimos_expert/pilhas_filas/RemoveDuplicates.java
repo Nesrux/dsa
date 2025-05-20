@@ -30,8 +30,10 @@ public class RemoveDuplicates {
                 st.push(letra);
             }
         }
+        StringBuilder sb = new StringBuilder();
+        st.stream().forEach((l) -> sb.append(l));
 
-        return st.toString();
+        return sb.toString();
 
     }
 
