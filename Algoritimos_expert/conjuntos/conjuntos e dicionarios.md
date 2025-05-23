@@ -66,3 +66,33 @@ Um **dicionário** (também conhecido como **mapa**) é uma coleção de pares *
 
 - **Mapeamento chave-valor em geral**:  
   Cookies, armazenamento local em navegadores, carrinhos de compras, compiladores, tabelas de símbolos, etc.
+
+## Principais Implementações
+
+### Árvores (TreeMap / TreeSet)
+
+- Mais lentas, porém mantêm os elementos **ordenados** e com desempenho **mais previsível**.
+- Implementação interna baseada em **árvores binárias de busca balanceadas**, como:
+  - **Árvore AVL**
+  - **Árvore Rubro-Negra**
+
+**Complexidade (acesso, inserção e remoção):**  
+`O(log n)`
+
+---
+
+### Tabela Hash (HashMap / HashSet)
+
+- Mais rápidas, porém **não garantem ordenação** dos elementos.
+- Implementação baseada em **tabela hash**.
+
+**Complexidade (ideal):**  
+`O(1)` — tempo constante para acesso, inserção e remoção.
+
+**Atenção:**  
+Se a função hash for mal construída ou houver muitas colisões, as operações podem se degradar para  
+`O(n)` no **pior caso**.
+
+**Fatores que influenciam o desempenho:**
+- Qualidade da **função hash**
+- Estratégia de **tratamento de colisões**
