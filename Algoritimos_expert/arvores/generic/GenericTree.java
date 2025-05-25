@@ -1,6 +1,6 @@
 package arvores.generic;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class GenericTree<T> {
@@ -21,7 +21,7 @@ public class GenericTree<T> {
         return size;
     }
 
-    public Position<T> root(){
+    public Position<T> root() {
         return this.root;
     }
 
@@ -43,7 +43,7 @@ public class GenericTree<T> {
 
     public List<Position<T>> children(Position<T> position) {
         Node<T> node = validate(position);
-        return new ArrayList<>(node.getChildren());
+        return Collections.unmodifiableList(node.getChildren());
     }
 
     private Node<T> validate(Position<T> position) {

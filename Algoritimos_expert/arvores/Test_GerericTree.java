@@ -25,6 +25,7 @@ public class Test_GerericTree {
         myTree.add("Azul ??? ", cap2);
 
         print(myTree);
+      
     }
 
     public static void print(GenericTree<String> tree) {
