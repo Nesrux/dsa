@@ -1,5 +1,8 @@
 package arvores.generic;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GenericTree<T> {
 
     private Node<T> root;
@@ -8,6 +11,18 @@ public class GenericTree<T> {
     public GenericTree() {
         this.root = null;
         this.size = 0;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public Position<T> root(){
+        return this.root;
     }
 
     public Position<T> add(T element, Position<T> parent) {
@@ -26,12 +41,9 @@ public class GenericTree<T> {
         return newNode;
     }
 
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    public int size() {
-        return size;
+    public List<Position<T>> children(Position<T> position) {
+        Node<T> node = validate(position);
+        return new ArrayList<>(node.getChildren());
     }
 
     private Node<T> validate(Position<T> position) {
