@@ -38,3 +38,16 @@ dsa/
 
 São árvores de propósito geral para armazenar objetos de forma hierarquica.
 Não possuem qualquer restrição específica de armazenamento dos objetos (ordenação, filhos)
+
+## Percurso em Profundidade (DFS - Depth-First Search)
+
+**Definição:**  
+O algoritmo de busca em profundidade (DFS) explora os ramos de uma estrutura (como grafos ou árvores) o mais profundamente possível antes de retroceder.
+
+### Funcionamento:
+
+- Inicia-se a partir de um **nó raiz** (ou qualquer nó inicial).
+- Visita **recursivamente** o primeiro filho, depois o primeiro filho do primeiro filho, e assim por diante.
+- Quando um nó **não possui mais filhos não visitados**, o algoritmo **retrocede** para o nó pai.
+- O processo continua até que **todos os nós** acessíveis a partir da raiz tenham sido visitados.
+
