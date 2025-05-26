@@ -53,17 +53,30 @@ public class GenericTree<T> {
         return elements;
     }
 
-    private void collectElements(List<T> list, Node<T> node) {
-        list.add(node.element());
-        for (Node<T> child : node.getChildren()) {
-            collectElements(list, child);
-        }
-    }
-
     public List<Position<T>> positions() {
         List<Position<T>> positions = new ArrayList<>();
         collectPositions(positions, root);
         return positions;
+    }
+
+    public Position<T> find(T element) {
+        return findRecursive(root, element);
+    }
+
+    public Position<T> findRecursive(Node<T> node, T target) {
+        if (node == null) {
+            return null;
+        }
+        if (node.element().equals(target)) {
+            return node;
+        }
+        for (var child : node.getChildren()) {
+            var found = this.findRecursive(child, target);
+            if (found != null) {
+                return found;
+            }
+        }
+        return null;
     }
 
     private void collectPositions(List<Position<T>> list, Node<T> node) {
@@ -82,6 +95,13 @@ public class GenericTree<T> {
             throw new IllegalArgumentException("Position is no longer in the tree");
         }
         return node;
+    }
+
+    private void collectElements(List<T> list, Node<T> node) {
+        list.add(node.element());
+        for (Node<T> child : node.getChildren()) {
+            collectElements(list, child);
+        }
     }
 
 }
