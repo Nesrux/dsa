@@ -1,5 +1,6 @@
 package arvores.generic;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -44,6 +45,32 @@ public class GenericTree<T> {
     public List<Position<T>> children(Position<T> position) {
         Node<T> node = validate(position);
         return Collections.unmodifiableList(node.getChildren());
+    }
+
+    public List<T> elements() {
+        List<T> elements = new ArrayList<>();
+        collectElements(elements, root);
+        return elements;
+    }
+
+    private void collectElements(List<T> list, Node<T> node) {
+        list.add(node.element());
+        for (Node<T> child : node.getChildren()) {
+            collectElements(list, child);
+        }
+    }
+
+    public List<Position<T>> positions() {
+        List<Position<T>> positions = new ArrayList<>();
+        collectPositions(positions, root);
+        return positions;
+    }
+
+    private void collectPositions(List<Position<T>> list, Node<T> node) {
+        list.add(node);
+        for (Node<T> child : node.getChildren()) {
+            collectPositions(list, child);
+        }
     }
 
     private Node<T> validate(Position<T> position) {

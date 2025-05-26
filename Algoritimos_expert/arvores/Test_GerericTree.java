@@ -23,19 +23,21 @@ public class Test_GerericTree {
         myTree.add("Ondas e frequencias", cap2);
         myTree.add("Reflexão e refração", cap2);
         myTree.add("Azul ??? ", cap2);
-
+        
+        //Print dfs PRE ORDER
         print(myTree);
-      
+     
     }
 
     public static void print(GenericTree<String> tree) {
-        printRecursive(tree.root(), tree);
+        printRecursive(tree.root(), tree, 0);
     }
 
-    public static void printRecursive(Position<String> position, GenericTree<String> tree) {
-        System.out.println(position.element());
+    public static void printRecursive(Position<String> position, GenericTree<String> tree, int depth) {
+      var spaces = "    ".repeat(depth);
+        System.out.println(spaces + " " +position.element());
         for(var child : tree.children(position)){
-           printRecursive(child, tree);
+           printRecursive(child, tree, depth + 1);
         }
 
     }
