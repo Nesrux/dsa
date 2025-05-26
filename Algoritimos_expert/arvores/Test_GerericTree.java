@@ -25,11 +25,12 @@ public class Test_GerericTree {
         myTree.add("Azul ??? ", cap2);
 
         // Print dfs PRE ORDER
-        print(myTree);
+      //   print(myTree);
 
         System.out.println(myTree.find("Introdução"));
-
-
+        System.out.println(myTree.isExternal(myTree.find("Reflexão e refração")));
+        System.out.println(myTree.isRoot(myTree.find("Livro azul")));
+        System.out.println(myTree.parent(myTree.find("Reflexão e refração")).element());
     }
 
     public static void print(GenericTree<String> tree) {

@@ -79,6 +79,20 @@ public class GenericTree<T> {
         return null;
     }
 
+    public Position<T> parent(Position<T> element) {
+        var node = validate(element);
+        return node.getParent();
+    }
+
+    public boolean isExternal(Position<T> element) {
+        return children(element).size() == 0;
+    }
+
+    public boolean isRoot(Position<T> element) {
+        var node = validate(element);
+        return node.equals(this.root);
+    }
+
     private void collectPositions(List<Position<T>> list, Node<T> node) {
         list.add(node);
         for (Node<T> child : node.getChildren()) {
