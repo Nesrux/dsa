@@ -51,3 +51,45 @@ O algoritmo de busca em profundidade (DFS) explora os ramos de uma estrutura (co
 - Quando um nó **não possui mais filhos não visitados**, o algoritmo **retrocede** para o nó pai.
 - O processo continua até que **todos os nós** acessíveis a partir da raiz tenham sido visitados.
 
+## Árvore Binária de Pesquisa - BST (Binary Search Tree)
+
+**Definição:**  
+A Árvore Binária de Pesquisa (BST - *Binary Search Tree*) é uma estrutura de árvore binária com a seguinte propriedade:
+
+- Cada **nó** armazena um elemento identificado por uma **chave**.
+- As **chaves são comparáveis**, ou seja, podem ser **menores**, **iguais** ou **maiores** entre si.
+- Para cada nó com uma chave `K`:
+  - As chaves armazenadas na **subárvore à esquerda** são **menores que K**.
+  - As chaves armazenadas na **subárvore à direita** são **maiores que K**.
+
+> **Nota:** Algumas variações permitem igualdade à esquerda ou à direita, dependendo da implementação.
+
+---
+
+### Complexidade da BST
+
+| Operação   | Melhor Caso | Pior Caso |
+|------------|--------------|------------|
+| Busca      | O(log n)     | O(n)       |
+| Inserção   | O(log n)     | O(n)       |
+| Remoção    | O(log n)     | O(n)       |
+
+- O **melhor caso** ocorre quando a árvore está **balanceada**.
+- O **pior caso** ocorre quando a árvore se comporta como uma **lista encadeada**, devido a inserções ordenadas.
+
+---
+
+### Aplicações da BST
+
+As BSTs são recomendadas para aplicações que envolvem muitas:
+
+- **Consultas (buscas)**
+- **Inserções**
+- **Remoções**
+
+Também são amplamente utilizadas para implementar:
+
+- **Conjuntos**
+- **Dicionários**
+
+> Nestes casos, **não pode haver repetição de chaves**.

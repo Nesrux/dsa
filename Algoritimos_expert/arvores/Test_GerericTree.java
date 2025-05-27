@@ -104,6 +104,7 @@ public class Test_GerericTree {
         }
 
      myTree.remove(root);
+
      System.out.println(myTree.size());
     }
 
