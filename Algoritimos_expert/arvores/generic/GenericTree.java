@@ -93,6 +93,22 @@ public class GenericTree<T> {
         return node.equals(this.root);
     }
 
+    public void replace(Position<T> position, T elem) {
+        var node = validate(position);
+        node.setElement(elem);
+    }
+
+    public void remove(Position<T> position) {
+        var node = validate(position);
+        if (node.equals(this.root)) {
+            this.root = null;
+            this.size = 0;
+        } else {
+            var parent = node.getParent();
+            parent.removechild(node);
+        }
+    }
+
     private void collectPositions(List<Position<T>> list, Node<T> node) {
         list.add(node);
         for (Node<T> child : node.getChildren()) {

@@ -2,6 +2,7 @@ package arvores.generic;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 class Node<T> implements Position<T> {
     private T element;
@@ -47,6 +48,23 @@ class Node<T> implements Position<T> {
 
     public List<Node<T>> getChildren() {
         return children;
+    }
+
+    @Override
+    @SuppressWarnings("rawtypes")
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Node)) {
+            return false;
+        }
+        Node node = (Node) o;
+        return Objects.equals(element, node.element);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(element);
     }
 
 }
