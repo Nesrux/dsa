@@ -102,11 +102,12 @@ public class GenericTree<T> {
         var node = validate(position);
         if (node.equals(this.root)) {
             this.root = null;
-            this.size = 0;
         } else {
             var parent = node.getParent();
             parent.removechild(node);
         }
+        this.size -= this.subTreeSize(node);
+        this.markAsRemoved(node);
     }
 
     private void collectPositions(List<Position<T>> list, Node<T> node) {
@@ -132,6 +133,21 @@ public class GenericTree<T> {
         for (Node<T> child : node.getChildren()) {
             collectElements(list, child);
         }
+    }
+
+    private void markAsRemoved(Node<T> node) {
+        node.setParent(node);
+        for (Node<T> child : node.getChildren()) {
+            this.markAsRemoved(child);
+        }
+    }
+
+    private int subTreeSize(Node<T> node) {
+        int childrenSize = 0;
+        for (Node<T> child : node.getChildren()) {
+            childrenSize += this.subTreeSize(child);
+        }
+        return 1 + childrenSize;
     }
 
 }

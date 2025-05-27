@@ -102,6 +102,9 @@ public class Test_GerericTree {
             System.out.println("SIZE = " + myTree.size());
             print(myTree);
         }
+
+     myTree.remove(root);
+     System.out.println(myTree.size());
     }
 
     public static <T> void print(GenericTree<T> tree) {
