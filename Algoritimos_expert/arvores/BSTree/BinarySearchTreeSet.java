@@ -1,5 +1,8 @@
 package arvores.BSTree;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 public class BinarySearchTreeSet<K extends Comparable<K>> {
@@ -10,6 +13,12 @@ public class BinarySearchTreeSet<K extends Comparable<K>> {
     public BinarySearchTreeSet() {
         this.size = 0;
         this.root = new Node(null, null);
+    }
+
+    public BinarySearchTreeSet(Collection<K> collection) {
+        this.size = 0;
+        this.root = new Node(null, null);
+        this.addAll(collection);
     }
 
     public int size() {
@@ -42,6 +51,41 @@ public class BinarySearchTreeSet<K extends Comparable<K>> {
                 parent.right = newNode;
             }
             this.size++;
+        }
+    }
+
+    public void addAll(Collection<K> values) {
+        values.stream().forEach(item -> add(item));
+    }
+
+    public String toStringFormat() {
+        StringBuilder sb = new StringBuilder();
+        toStringFormat(root, 0, sb);
+        return sb.toString();
+    }
+
+    // Percurso interfixo
+    public List<K> keys() {
+        ArrayList<K> keys = new ArrayList<>();
+        collectKeys(root, keys);
+        return keys;
+    }
+
+    private void collectKeys(Node node, List<K> keyslist) {
+        if (!node.isSentinel()) {
+            collectKeys(node.left, keyslist);
+            keyslist.add(node.key);
+            collectKeys(node.right, keyslist);
+        }
+    }
+
+    private void toStringFormat(Node node, int depth, StringBuilder sb) {
+        if (!node.isSentinel()) {
+            toStringFormat(node.right, depth + 1, sb);
+            String space = (depth > 0) ? "  ".repeat(depth - 1) + "--" : "";
+            String parent = (depth > 0) ? node.parent.key.toString() : "";
+            sb.append(space + "(" + node.key + ")" + parent + "\n");
+            toStringFormat(node.left, depth + 1, sb);
         }
     }
 
