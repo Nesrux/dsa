@@ -100,6 +100,14 @@ public class BinarySearchTreeSet<K extends Comparable<K>> {
         return true;
     }
 
+    public BinarySearchTreeSet<K> union(BinarySearchTreeSet<K> other) {
+        var result = new BinarySearchTreeSet<K>();
+        this.keys().forEach(key -> result.add(key));
+        other.keys().forEach(key -> result.add(key));
+        return result;
+    
+    }
+
     private Node findmin(Node node) {
         while (!node.left.isSentinel()) {
             node = node.left;
