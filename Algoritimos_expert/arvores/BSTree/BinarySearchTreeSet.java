@@ -81,6 +81,12 @@ public class BinarySearchTreeSet<K extends Comparable<K>> {
         if (nodeToRemove.isSentinel()) {
             return false;
         }
+        if (!nodeToRemove.left.isSentinel() && !nodeToRemove.right.isSentinel()) {
+            var sucessor = this.findmin(nodeToRemove.right);
+            nodeToRemove.key = sucessor.key;
+            nodeToRemove = sucessor;
+        }
+
         var child = nodeToRemove.left.isSentinel() ? nodeToRemove.right : nodeToRemove.left;
         child.parent = nodeToRemove.parent;
         if (nodeToRemove.parent == null) {
@@ -92,6 +98,13 @@ public class BinarySearchTreeSet<K extends Comparable<K>> {
         }
         size--;
         return true;
+    }
+
+    private Node findmin(Node node) {
+        while (!node.left.isSentinel()) {
+            node = node.left;
+        }
+        return node;
     }
 
     private void collectKeys(Node node, List<K> keyslist) {
