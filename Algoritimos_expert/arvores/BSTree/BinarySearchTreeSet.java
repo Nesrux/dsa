@@ -71,6 +71,29 @@ public class BinarySearchTreeSet<K extends Comparable<K>> {
         return keys;
     }
 
+    public boolean contains(K key) {
+        return !findKeyLocation(root, key).isSentinel();
+    }
+
+    public boolean remove(K key) {
+        Objects.requireNonNull(key, "key cannot be null");
+        var nodeToRemove = findKeyLocation(this.root, key);
+        if (nodeToRemove.isSentinel()) {
+            return false;
+        }
+        var child = nodeToRemove.left.isSentinel() ? nodeToRemove.right : nodeToRemove.left;
+        child.parent = nodeToRemove.parent;
+        if (nodeToRemove.parent == null) {
+            this.root = child;
+        } else if (nodeToRemove.equals(nodeToRemove.parent.left)) {
+            nodeToRemove.parent.left = child;
+        } else {
+            nodeToRemove.parent.right = child;
+        }
+        size--;
+        return true;
+    }
+
     private void collectKeys(Node node, List<K> keyslist) {
         if (!node.isSentinel()) {
             collectKeys(node.left, keyslist);
